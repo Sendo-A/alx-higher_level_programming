@@ -16,6 +16,6 @@ if __name__ == "__main__":
         print("{} * {} = {}".format(a, b, add(a, b)))
     elif op == "/":
         print("{} / {} = {}".format(a, b, add(a, b)))
-    ese:
+    else:
         print("Unknown operator. Available operators: +, -, * and / ")
         exit(1)
