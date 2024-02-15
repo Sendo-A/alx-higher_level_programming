@@ -1,7 +1,6 @@
--- Use RIGHT JOIN
--- Execute: cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
-SELECT b.title, a.genre_id 
-FROM tv_show_genres a 
-RIGHT JOIN tv_shows b 
-ON a.show_id = b.id 
-ORDER BY b.title, a.genre_id ASC;
+-- lists all shows in hbtn_0d_tvsows that have at least 1 genre linked
+SELECT tv_shows.title, tv_show_genres.genre_id
+       FROM tv_shows
+       LEFT OUTER JOIN tv_show_genres
+       ON tv_shows.id = tv_show_genres.show_id
+       ORDER BY tv_shows.title, tv_show_genres.genre_id;
